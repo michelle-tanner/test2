@@ -1,5 +1,6 @@
 window.onmousedown = (e) => {
     track.dataset.mouseDownAt = e.clientX;
+    alert("clicked");
 }
 
 window.onmouseup = () => {
