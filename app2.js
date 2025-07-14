@@ -1,4 +1,4 @@
-// Veersion 2
+// Version 2
 
 const track = document.getElementById("image-track");
 
