@@ -1,6 +1,5 @@
 // Version 2
 
-
 const track = document.getElementById("image-track");
 
 track.dataset.mouseDownAt = "0";
