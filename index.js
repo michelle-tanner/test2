@@ -1,4 +1,5 @@
-const track = document.getElementById("image-track")
+const track = document.getElementById("image-track");
+const slideFriction = 0.5;
 
 window.onmousedown = e => {
     track.dataset.mouseDownAt = e.clientX;
@@ -9,7 +10,8 @@ window.onmousemove = e => {
     if (track.dataset.mouseDownAt === "0") return; 
 
     const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX, 
-    maxDelta = window.innerWidth * 0.5;
+    // creates more of a bouncy slide
+    maxDelta = window.innerWidth * slideFriction;
 
     const percentage = - (mouseDelta / maxDelta) * 100,
     nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
@@ -29,7 +31,7 @@ window.onmousemove = e => {
     for (const image of track.getElementsByClassName("image")){
         image.animate(
             {
-                objectPosition: `${nextPercentage + 100}%, -50%`
+                objectPosition: `${nextPercentage + 100}% -50%`
             },
             {
                 duration: 1200, fill: "forwards"
@@ -41,4 +43,6 @@ window.onmousemove = e => {
 window.onmouseup = () => {
     track.dataset.mouseDownAt = 0;
     track.dataset.prevPercentage = track.dataset.percentage;
+
+
 }
