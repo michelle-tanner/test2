@@ -5,25 +5,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Carousel Remake</title>
         <link rel="stylesheet" href="styles.css">
-        <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+        <!-- <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet"> -->
     </head>
 
     <body>
 
-        <div id="image-track">
-            <img class="image" src="assets/blue_line.png" />
-            <img class="image" src="assets/cta_stop.png" />
-            <img class="image" src="assets/dave_and_busters.png" />
-            <img class="image" src="assets/girls.png" />
-            <img class="image" src="assets/mango_mango.png" />
-            <img class="image" src="assets/mountain.png" />
+        <div id="image-track" data-mouse-down-at="0" data-prev-percentage="0">
+            <img class="image" src="assets/blue_line.png" draggable="false"/>
+            <img class="image" src="assets/cta_stop.png" draggable="false"/>
+            <img class="image" src="assets/dave_and_busters.png" draggable="false"/>
+            <img class="image" src="assets/girls.png" draggable="false"/>
+            <img class="image" src="assets/mango_mango.png" draggable="false"/>
+            <img class="image" src="assets/mountain.png" draggable="false"/>
 
             
-            <img class="image" src="assets/skiing.png" />
-            <img class="image" src="assets/uic.png" />
+            <img class="image" src="assets/skiing.png" draggable="false"/>
+            <img class="image" src="assets/uic.png" draggable="false"/>
 
         </div>
 
-        <script src="app.js"></script>
+        <script src="index.js"></script>
 s    </body>
 </html>
