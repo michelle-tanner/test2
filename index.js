@@ -1,5 +1,5 @@
 const track = document.getElementById("image-track");
-const slideFriction = 0.5;
+const slideFriction = 1;
 
 window.onmousedown = e => {
     track.dataset.mouseDownAt = e.clientX;

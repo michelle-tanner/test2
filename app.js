@@ -21,5 +21,6 @@ window.onmousemove = (e) => {
     
     track.dataset.percentage = nextPercentage;
     
-    track.style.transform = "translate(" + {nextPercentage} + "%, -50%)";
+    // track.style.transform = "translate(" + {nextPercentage} + "%, -50%)";
+    track.style.transform = `translate(${nextPercentage}%, -50%)`;
 }
