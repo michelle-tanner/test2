@@ -5,12 +5,17 @@ window.onmousedown = e => {
 }
 
 window.onmousemove = e => {
+
+    if (track.dataset.mouseDownAt === "0") return; 
+
     const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX, 
     maxDelta = window.innerWidth * 0.5;
 
     const percentage = - (mouseDelta / maxDelta) * 100,
     nextPercentageUnconstrained = parseFloat(track.dataset.prevPercentage) + percentage,
     nextPercentage = Math.max(Math.min (nextPercentageUnconstrained, 0), -100);
+
+    track.dataset.percentage = nextPercentage;
 
     track.animate(
         {
@@ -31,4 +36,9 @@ window.onmousemove = e => {
             }
         )
     }
+}
+
+window.onmouseup = () => {
+    track.dataset.mouseDownAt = 0;
+    track.dataset.prevPercentage = track.dataset.percentage;
 }
