@@ -2,23 +2,23 @@
 // might delete
 const track = document.getElementById("image-track");
 
-track.dataset.mouseDownAt = "0";
-track.dataset.prevPercentage = "0";
-track.dataset.percentage = "0";
+track.dataset.mouseDownAt = 0;
+track.dataset.prevPercentage = 0;
+track.dataset.percentage = 0;
 
-window.onmousedown = (e) => {
+window.onmousedown = e => {
     track.dataset.mouseDownAt = e.clientX;
     track.style.cursor = 'grabbing';
 };
 
 window.onmouseup = () => {
-    track.dataset.mouseDownAt = "0";
+    track.dataset.mouseDownAt = 0;
     track.dataset.prevPercentage = track.dataset.percentage;
     track.style.cursor = 'grab';
 
 };
 
-window.onmousemove = (e) => {
+window.onmousemove = e => {
     if (track.dataset.mouseDownAt === "0") return;
 
     const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX;
@@ -38,7 +38,7 @@ window.onmousemove = (e) => {
     }
 };
 
-window.ontouchstart = (e) => {
+window.ontouchstart = e => {
     track.dataset.mouseDownAt = e.touches[0].clientX;
     track.style.cursor = 'grabbing';
 };
@@ -49,7 +49,7 @@ window.ontouchend = () => {
     track.style.cursor = 'grab';
 };
 
-window.ontouchmove = (e) => {
+window.ontouchmove = e => {
     if (track.dataset.mouseDownAt === "0") return;
 
     const touchDelta = parseFloat(track.dataset.mouseDownAt) - e.touches[0].clientX;
