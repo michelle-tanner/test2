@@ -8,13 +8,13 @@ track.dataset.percentage = 0;
 
 window.onmousedown = e => {
     track.dataset.mouseDownAt = e.clientX;
-    track.style.cursor = 'grabbing';
+    // track.style.cursor = 'grabbing';
 };
 
 window.onmouseup = () => {
     track.dataset.mouseDownAt = 0;
     track.dataset.prevPercentage = track.dataset.percentage;
-    track.style.cursor = 'grab';
+    // track.style.cursor = 'grab';
 
 };
 
