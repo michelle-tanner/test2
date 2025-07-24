@@ -1,16 +1,16 @@
 // Version 1
 
-window.onmousedown = (e) => {
+window.onmousedown = e => {
     track.dataset.mouseDownAt = e.clientX;
-    alert("clicked");
+    // alert("clicked");
 }
 
 window.onmouseup = () => {
-    track.dataset.mouseDownAt = "0";
+    track.dataset.mouseDownAt = 0;
     track.dataset.prevPercentage = track.dataset.percentage;
 }
 
-window.onmousemove = (e) => {
+window.onmousemove = e => {
     if (track.dataset.mouseDownAt === "0") return;
 
     const mouseDelta = parseFloat(track.dataset.mouseDownAt) - e.clientX, 
